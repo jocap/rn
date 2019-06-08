@@ -10,3 +10,6 @@ install: rn rn.1
 uninstall: rn rn.1
 	rm /usr/local/bin/rn
 	rm /usr/local/man/man1/rn.1
+
+README.md: rn.1
+	mandoc -T markdown rn.1 | sed s/^#/###/ > README.md
