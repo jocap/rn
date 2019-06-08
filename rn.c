@@ -63,6 +63,9 @@ int main(int argc, char* argv[]) {
 	int r = rename(old, new);
 	if (r == -1) err(1, NULL);
 
+	free(old);
+	free(new);
+
 	return 0;
 
 	usage:
