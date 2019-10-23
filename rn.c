@@ -44,7 +44,8 @@ int main(int argc, char* argv[]) {
 				break;
 			}
 			break;
-		case '/':
+		case '[':
+		case ']':
 			if (in_brackets) { in_brackets = 0; continue; }
 
 			in_brackets = 1;

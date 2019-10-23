@@ -15,8 +15,8 @@
 renames a file by removing the parts of
 the file name
 .Ar pattern
-that are enclosed in forward slashes
-.Li ( / )
+that are enclosed in square brackets
+.Li ( [ ] )
 and replacing them with the specified
 .Ar substitutions .
 
@@ -26,39 +26,22 @@ to
 .Li rn.7 :
 .
 .Bd -literal -offset 6n
-$ rn rn./1/ 7
+$ rn rn.[1] 7
 .Ed
 
 To use a literal forward slash in
 .Ar pattern ,
-you can escape it with a backslash
-.Li ( \\\\ ) .
-
-The following useless demonstation renames
-.Li a/b/c
-to
-.Li x/y/z :
-.
-.Bd -literal -offset 6n
-$ rn '/a/\\//b/\\//c/' x y z
-.Ed
-
-(As long as the directories
-.Li x ,
-.Li y
-and
-.Li z
-already exist.)
+you can escape it with a backslash.
 .
 .Sh ARGUMENTS
 .Bl -tag
 .It Ar pattern
 the name of the file to be renamed, but in which the parts to be
-substituted are enclosed in forward slashes
-.Li ( / )
+substituted are enclosed in square brackets
+.Li ( [] )
 .It Ar substitutions ...
 the replacements, in order, for each
-.Li /replacee/
+.Li [replacee]
 in
 .Ar pattern
 .El
